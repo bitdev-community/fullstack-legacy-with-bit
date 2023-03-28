@@ -1,7 +1,7 @@
 # Hello World Example
 Hello world example that show case a fullstack application at various stages 
 
-# Creating a Simple React App
+## Creating a Simple React App
 
 1. Create a folder named `web` and inside that execute the following command
 
@@ -12,7 +12,7 @@ Hello world example that show case a fullstack application at various stages
 `npm run start`
 
 
-# Creating an Express API
+## Creating an Express API
 1. Create a folder named `api` and inside that execute the following command
 
 ```
@@ -69,7 +69,7 @@ app.listen(4000, () => {
 
 `npm run start`
 
-# Common
+## Common
 
 1. Create a `.gitignore` file and add the following at the project root
 
