@@ -2,7 +2,7 @@ name: Build and Deploy Express app using SSH
 
 on:
   push:
-    branches: [main]
+    branches: [pre-bit]
 
 jobs:
   deploy:
