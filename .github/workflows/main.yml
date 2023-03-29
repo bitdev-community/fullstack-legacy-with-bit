@@ -1,4 +1,4 @@
-name: Build and Deploy Express app using SSH
+name: Build and Deploy Express App using SSH
 
 on:
   push:
