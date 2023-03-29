@@ -37,6 +37,7 @@ jobs:
           EXCLUDE: "/dist/, /node_modules/"
           SCRIPT_BEFORE: |
             apt-get install rsync
+            ls -al
           SCRIPT_AFTER: |
             whoami
             ls -al
