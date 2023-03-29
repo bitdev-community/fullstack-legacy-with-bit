@@ -1,16 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div
-        >
-          Hello World
-        </div>
-      </header>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <h1>Hello World</h1>
     </div>
   );
 }
