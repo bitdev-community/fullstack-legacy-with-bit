@@ -6,7 +6,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   const fetchMessage = () => {
-    api.get('/hello')
+    api.get('/api/hello')
       .then(res => setMessage(res.data))
       .catch(err => console.error(err));
   };
