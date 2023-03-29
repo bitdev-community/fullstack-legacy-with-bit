@@ -10,6 +10,12 @@
 
 # Define the redirect rules
 # More information: https://docs.netlify.com/routing/redirects/
+
+[[redirects]]
+  from = "/api/hello"
+  to = "${HELLO_API_URL}"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/web/index.html"
