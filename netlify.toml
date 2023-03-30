@@ -13,7 +13,7 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "http://13.228.159.236:4000/api/:splat"
+  to = "http://13.228.159.236:4000/api/:splat" # Replace the path with your API HOST
   status = 200
 
 [[redirects]]
