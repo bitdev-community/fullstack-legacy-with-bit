@@ -40,5 +40,5 @@ jobs:
           SCRIPT_AFTER: |
             whoami
             ls -al
-            npm run start
+            forever index.js
             echo $RSYNC_STDOUT
