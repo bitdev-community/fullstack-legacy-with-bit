@@ -30,14 +30,15 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvc -i"
-          SOURCE: "api/"
+          SOURCE: "api/dist/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
+          TARGET: "api/"
+          EXCLUDE: "api/dist/, api/node_modules/"
           SCRIPT_BEFORE: |
             whoami
-            ls
+            ls -al
           SCRIPT_AFTER: |
             whoami
-            ls
+            ls -al
             echo $RSYNC_STDOUT
