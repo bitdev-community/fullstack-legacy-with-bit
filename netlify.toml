@@ -12,8 +12,8 @@
 # More information: https://docs.netlify.com/routing/redirects/
 
 [[redirects]]
-  from = "/api/hello"
-  to = "${HELLO_API_REWRITE_URL}"
+  from = "/api/*"
+  to = "${HELLO_API_REWRITE_URL}/:splat"
   status = 200
 
 [[redirects]]
