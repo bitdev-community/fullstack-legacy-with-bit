@@ -3,20 +3,6 @@
   command = "cd web && npm install && npm run build"
   publish = "web/build"
 
-# Define build settings
-# More information: https://docs.netlify.com/configure-builds/environment-variables/
 [build.environment]
   NODE_ENV = "production"
-
-# Define the redirect rules
-# More information: https://docs.netlify.com/routing/redirects/
-
-[[redirects]]
-  from = "/api/*"
-  to = "http://13.228.159.236:4000/api/:splat" # Replace the path with your API HOST
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/web/index.html"
-  status = 200
+  

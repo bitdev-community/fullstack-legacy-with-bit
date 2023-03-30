@@ -1,23 +1,29 @@
 import React from 'react';
-import { useState } from 'react';
-import api from './api';
+import { Button } from './ui/button';
+import useHelloWorld from './hooks/use-hello-world';
+import { Heading } from './ui/heading';
+import cx from 'classnames';
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [{ data, loading, error }, fetchData] = useHelloWorld();
 
-  const fetchMessage = () => {
-    api.get('/api/hello')
-      .then(res => setMessage(res.data))
-      .catch(err => console.error(err));
-  };
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <h1>{message}</h1>
-      <button style={{ display: !message ? 'block' : 'none', padding: 10, marginTop: 10 }}
-        onClick={fetchMessage}>Fetch Message</button>
+    <div className={cx("container")}>
+      {data ? (
+        <Heading>{data}</Heading>
+      ) : (
+        <Button onClick={fetchData}>Load Data</Button>
+      )}
     </div>
-  );
+  )
 }
 
 export default App;
