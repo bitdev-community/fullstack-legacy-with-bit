@@ -34,7 +34,7 @@ jobs:
           source: "api/"
           target: "/projects/api/"
 
-     - name: Deploy to server
+      - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.REMOTE_HOST }}
