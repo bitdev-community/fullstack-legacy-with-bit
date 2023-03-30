@@ -35,5 +35,6 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: "api/"
           SCRIPT_AFTER: |
+            forever stopall
             nohup forever api/index.js  &> /dev/null &
-            
+
