@@ -40,5 +40,5 @@ jobs:
           SCRIPT_AFTER: |
             whoami
             ls -al
-            forever index.js
+            forever api/index.js
             echo $RSYNC_STDOUT
