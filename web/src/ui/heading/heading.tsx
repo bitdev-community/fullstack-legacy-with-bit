@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from 'react';
 import cx from 'classnames';
+import './heading.scss'
 
 export type HeadingProp = {
     children: string;

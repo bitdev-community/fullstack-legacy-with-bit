@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button } from './ui/button';
+import { Button } from './ui/button/button';
 import useHelloWorld from './hooks/use-hello-world';
-import { Heading } from './ui/heading';
+import { Heading } from './ui/heading/heading';
 import cx from 'classnames';
+import './style.scss'
 
 function App() {
   const [{ data, loading, error }, fetchData] = useHelloWorld();

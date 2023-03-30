@@ -1,6 +1,6 @@
 import type { ReactNode, HTMLAttributes } from 'react';
 import cx from 'classnames';
-import '../style.scss'
+import './button.scss'
 
 export type ButtonProps = {
     children: string | ReactNode;
