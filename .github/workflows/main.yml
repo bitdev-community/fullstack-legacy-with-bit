@@ -34,12 +34,6 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: "api/"
-          SCRIPT_BEFORE: |
-            whoami
-            ls -al
           SCRIPT_AFTER: |
-            whoami
-            ls -al
-            echo $PWD
-            forever api/index.js
-            echo $RSYNC_STDOUT
+            nohup forever api/index.js  &> /dev/null &
+            
