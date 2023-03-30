@@ -13,7 +13,7 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "${HELLO_API_REWRITE_URL}/:splat"
+  to = "${HELLO_API_REWRITE_URL}/api/:splat"
   status = 200
 
 [[redirects]]
