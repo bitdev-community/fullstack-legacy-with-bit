@@ -25,17 +25,23 @@ jobs:
         working-directory: ./api
         run: npm run build --if-present
       
-      - name: Deploy to server
+      - name: Copy code to server
+        uses: appleboy/scp-action@v1.0.4
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "api/"
+          target: "/projects/api/"
+
+     - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /api
-            mkdir api
-            cd api
-            cp -r ../../api .
+            cd /projects/api/
             npm install
             npm run start
 
