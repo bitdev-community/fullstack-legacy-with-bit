@@ -40,5 +40,6 @@ jobs:
           SCRIPT_AFTER: |
             whoami
             ls -al
+            echo $PWD
             forever api/index.js
             echo $RSYNC_STDOUT
