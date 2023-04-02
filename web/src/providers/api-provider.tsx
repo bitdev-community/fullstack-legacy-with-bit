@@ -17,7 +17,7 @@ export const useApi = () => {
 
 export const useApiMock = () => {
   const api = useContext(ApiContext);
-  if (!api) throw new Error('useApi must be used within an ApiProvider');
+  if (!api) throw new Error('useApiMock must be used within an ApiProvider');
   return new MockAdapter(api);
 };
 
