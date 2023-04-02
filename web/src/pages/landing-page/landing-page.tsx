@@ -1,18 +1,18 @@
-import type { HTMLAttributes } from 'react';
 import cx from 'classnames';
 import { Button } from '../../ui/button';
 import { Heading } from '../../ui/heading';
+import useHelloWorld from '../../hooks/use-hello-world';
 import './landing-page.scss'
+import { HTMLAttributes } from 'react';
 
 export type LandingPageProps = {
   helloMessage: string;
   fetchData: () => void;
-  className?: string;
 } & HTMLAttributes<HTMLButtonElement>
 
-export const LandingPage = ({ helloMessage, fetchData, className, ...rest }: LandingPageProps) => {
+export const LandingPage = ({ helloMessage, fetchData }: LandingPageProps) => {
   return (
-    <div className={cx("container", className)} {...rest}>
+    <div className={cx("container")}>
       {helloMessage ? (
         <Heading>{helloMessage}</Heading>
       ) : (
