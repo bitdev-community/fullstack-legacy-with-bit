@@ -14,7 +14,6 @@ const useHelloWorld = (): [DataState<string>, () => void] => {
   const [error, setError] = useState<Error | null>(null);
   const api = useApi();
 
-
   const fetchData = async () => {
     try {
       setLoading(true);

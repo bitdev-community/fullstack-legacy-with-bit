@@ -1,4 +1,4 @@
-import React, { ReactNode, createContext, useContext, useMemo, useState } from 'react';
+import React, { ReactNode, createContext, useContext, useMemo } from 'react';
 import axios, { AxiosInstance } from 'axios';
 
 interface ApiProviderProps {
