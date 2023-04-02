@@ -1,9 +1,6 @@
-import React from 'react';
-import { Button } from './ui/button/button';
 import useHelloWorld from './hooks/use-hello-world';
-import { Heading } from './ui/heading/heading';
-import cx from 'classnames';
-import './style.scss'
+import { Routes, Route } from 'react-router-dom';
+import { LandingPage } from './pages/landing-page';
 
 function App() {
   const [{ data, loading, error }, fetchData] = useHelloWorld();
@@ -17,13 +14,11 @@ function App() {
   }
 
   return (
-    <div className={cx("container")}>
-      {data ? (
-        <Heading>{data}</Heading>
-      ) : (
-        <Button onClick={fetchData}>Load Data</Button>
-      )}
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPage
+        fetchData={fetchData}
+        helloMessage={data as string} />} />
+    </Routes>
   )
 }
 

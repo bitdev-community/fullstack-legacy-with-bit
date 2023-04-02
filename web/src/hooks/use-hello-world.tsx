@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-interface ApiState<T> {
+interface DataState<T> {
   data: T | null;
   loading: boolean;
   error: Error | null;
 }
 
-async function fetchText(url: string): Promise<string> {
+const fetchText = async (url: string): Promise<string> => {
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
@@ -14,12 +14,12 @@ async function fetchText(url: string): Promise<string> {
   return response.text();
 }
 
-function useApi(): [ApiState<string>, () => void] {
+const useHelloWorld = (): [DataState<string>, () => void] => {
   const [data, setData] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-  async function fetchData() {
+  const fetchData = async () => {
     try {
       setLoading(true);
       const text = await fetchText(`${process.env.REACT_APP_HELLO_API_HOST}/api/hello`);
@@ -34,4 +34,4 @@ function useApi(): [ApiState<string>, () => void] {
   return [{ data, loading, error }, fetchData];
 }
 
-export default useApi;
+export default useHelloWorld;
