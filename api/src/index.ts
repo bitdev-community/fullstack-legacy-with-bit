@@ -1,4 +1,4 @@
-import express, { Router, Request, Response } from 'express';
+import express from 'express';
 import cors from 'cors';
 import helloRouter from './routes/hello/hello';
 
