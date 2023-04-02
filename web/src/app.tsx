@@ -4,7 +4,7 @@ import { ApiProvider } from './providers/api-provider';
 
 function App() {
   return (
-    <ApiProvider apiUrl={process.env.REACT_APP_HELLO_API_HOST as string}>
+    <ApiProvider baseURL={process.env.REACT_APP_HELLO_API_HOST as string}>
     <Routes>
       <Route path="/" element={<LandingPage />} />
     </Routes>

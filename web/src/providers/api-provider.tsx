@@ -1,20 +1,20 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, createContext, useContext, useMemo, useState } from 'react';
+import axios, { AxiosInstance } from 'axios';
 
-interface ApiContextProps {
-  apiUrl?: string;
-  children?: string | ReactNode;
+interface ApiProviderProps {
+  baseURL: string;
+  children: ReactNode;
 }
 
-export const ApiContext = React.createContext<ApiContextProps>({
-  apiUrl: 'https://hello.bitexamples.com'
-});
+export const ApiContext = createContext<AxiosInstance | undefined>(undefined);
 
-export const ApiProvider = ({ apiUrl, children }: ApiContextProps) => {
-  const [apiUrlState] = useState<string>(apiUrl || '');
+export const useApi = () => {
+  const api = useContext(ApiContext);
+  if (!api) throw new Error('useApi must be used within an ApiProvider');
+  return api;
+};
 
-  return (
-    <ApiContext.Provider value={{ apiUrl: apiUrlState }}>
-      {children}
-    </ApiContext.Provider>
-  );
+export const ApiProvider = ({ baseURL, children }: ApiProviderProps) => {
+  const api = useMemo(() => axios.create({ baseURL }), [baseURL]);
+  return <ApiContext.Provider value={api}>{children}</ApiContext.Provider>;
 };
