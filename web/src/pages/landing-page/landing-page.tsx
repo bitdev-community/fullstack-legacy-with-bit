@@ -6,15 +6,24 @@ import './landing-page.scss'
 import { HTMLAttributes } from 'react';
 
 export type LandingPageProps = {
-  helloMessage: string;
-  fetchData: () => void;
-} & HTMLAttributes<HTMLButtonElement>
+  className?: string;
+} & HTMLAttributes<HTMLDivElement>
 
-export const LandingPage = ({ helloMessage, fetchData }: LandingPageProps) => {
+export const LandingPage = ({className, ...rest}: LandingPageProps) => {
+  const [{ data, loading, error }, fetchData] = useHelloWorld();
+
+  if (loading) {
+    return <p {...rest}>Loading...</p>;
+  }
+
+  if (error) {
+    return <p {...rest}>Error: {error.message}</p>;
+  }
+  
   return (
-    <div className={cx("container")}>
-      {helloMessage ? (
-        <Heading>{helloMessage}</Heading>
+    <div className={cx("container", className)} {...rest}>
+      {data ? (
+        <Heading>{data}</Heading>
       ) : (
         <Button onClick={fetchData}>Load Data</Button>
       )}
