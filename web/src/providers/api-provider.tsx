@@ -1,5 +1,6 @@
 import React, { ReactNode, createContext, useContext, useMemo } from 'react';
 import axios, { AxiosInstance } from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 
 interface ApiProviderProps {
   baseURL: string;
@@ -12,6 +13,12 @@ export const useApi = () => {
   const api = useContext(ApiContext);
   if (!api) throw new Error('useApi must be used within an ApiProvider');
   return api;
+};
+
+export const useApiMock = () => {
+  const api = useContext(ApiContext);
+  if (!api) throw new Error('useApi must be used within an ApiProvider');
+  return new MockAdapter(api);
 };
 
 export const ApiProvider = ({ baseURL, children }: ApiProviderProps) => {
