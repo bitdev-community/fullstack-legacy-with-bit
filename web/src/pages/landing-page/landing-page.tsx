@@ -7,11 +7,12 @@ import './landing-page.scss'
 export type LandingPageProps = {
   helloMessage: string;
   fetchData: () => void;
+  className?: string;
 } & HTMLAttributes<HTMLButtonElement>
 
-export const LandingPage = ({ helloMessage, fetchData }: LandingPageProps) => {
+export const LandingPage = ({ helloMessage, fetchData, className, ...rest }: LandingPageProps) => {
   return (
-    <div className={cx("container")}>
+    <div className={cx("container", className)} {...rest}>
       {helloMessage ? (
         <Heading>{helloMessage}</Heading>
       ) : (
