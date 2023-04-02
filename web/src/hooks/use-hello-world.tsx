@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { HostContext } from '../providers/host-context-provider';
 
 interface DataState<T> {
   data: T | null;
@@ -18,11 +19,12 @@ const useHelloWorld = (): [DataState<string>, () => void] => {
   const [data, setData] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
+  const { hostUrl } = useContext(HostContext);
 
   const fetchData = async () => {
     try {
       setLoading(true);
-      const text = await fetchText(`${process.env.REACT_APP_HELLO_API_HOST}/api/hello`);
+      const text = await fetchText(`${hostUrl}/api/hello`);
       setData(text);
     } catch (error) {
       setError(error as Error);
