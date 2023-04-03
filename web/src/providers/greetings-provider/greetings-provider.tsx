@@ -1,8 +1,7 @@
 import { createContext, ReactNode, useContext } from 'react';
-import Axios, { AxiosInstance } from 'axios';
 
 interface GreetingsContextValue {
-  axiosInstance: AxiosInstance;
+  fetchInstance: (url: string, options?: RequestInit) => Promise<Response>;
 }
 
 interface GreetingsProviderProps {
@@ -11,7 +10,7 @@ interface GreetingsProviderProps {
 }
 
 export const GreetingsContext = createContext<GreetingsContextValue>({
-  axiosInstance: Axios.create(),
+  fetchInstance: fetch,
 });
 
 export const useGreetings = () => {
@@ -21,12 +20,11 @@ export const useGreetings = () => {
 };
 
 export function GreetingsProvider({ children, baseURL }: GreetingsProviderProps) {
-  const axiosInstance = Axios.create({
-    baseURL: baseURL || 'https://hello.bitexamples.com'
-  });
+  const fetchInstance = (url: string, options?: RequestInit) =>
+    fetch(`${baseURL || 'https://hello.bitexamples.com'}${url}`, options);
 
   return (
-    <GreetingsContext.Provider value={{ axiosInstance }}>
+    <GreetingsContext.Provider value={{ fetchInstance }}>
       {children}
     </GreetingsContext.Provider>
   );
