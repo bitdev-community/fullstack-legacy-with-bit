@@ -1,14 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
 import { LandingPage } from './pages/landing-page';
-import { ApiProvider } from './providers/api-provider';
+import { HelloWorldProvider } from './providers/greetings-provider';
 
 function App() {
   return (
-    <ApiProvider baseURL={process.env.REACT_APP_HELLO_API_HOST as string}>
+    <HelloWorldProvider baseURL={process.env.REACT_APP_HELLO_API_HOST as string}>
     <Routes>
       <Route path="/" element={<LandingPage />} />
     </Routes>
-    </ApiProvider>
+    </HelloWorldProvider>
   )
 }
 
