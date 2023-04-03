@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useApi } from '../providers/api-provider';
+import { useApi } from '../../providers/api-provider';
 
 interface DataState<T> {
   data: T | null;
