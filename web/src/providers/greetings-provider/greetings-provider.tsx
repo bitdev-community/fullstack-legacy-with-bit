@@ -20,7 +20,7 @@ export const useGreetings = () => {
   return greetings;
 };
 
-export function HelloWorldProvider({ children, baseURL }: GreetingsProviderProps) {
+export function GreetingsProvider({ children, baseURL }: GreetingsProviderProps) {
   const axiosInstance = Axios.create({
     baseURL: baseURL || 'https://hello.bitexamples.com'
   });
