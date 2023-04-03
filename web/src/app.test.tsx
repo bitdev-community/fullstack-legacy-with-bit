@@ -1,19 +1,55 @@
-import React, { ReactNode } from 'react';
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import fetchMock from 'fetch-mock-jest';
+
 import App from './app';
-import { GreetingsProvider } from './providers/greetings-provider';
+import { BrowserRouter } from 'react-router-dom';
 
-test('renders "Hello World" text', async () => {
+describe('App component', () => {
+  beforeEach(async () => {
+    await fetchMock.mock('http://localhost:4000/api/hello', 'Hello World!');
+  });
 
-  render(
-    <BrowserRouter>
-      <GreetingsProvider baseURL="/">
+  afterEach(() => {
+    fetchMock.reset();
+  });
+
+  test('displays Load Data button', async () => {
+    render(
+      <BrowserRouter>
         <App />
-      </GreetingsProvider>
-    </BrowserRouter>
-  );
+      </BrowserRouter>
+    );
+     // After viewing the page you should find a Load Data button
+    expect(await screen.findByText('Load Data')).toBeInTheDocument();
+  });
 
-  const helloElement = await screen.findByText(/Hello World/i);
-  expect(helloElement).toBeInTheDocument();
+  test('fetch data is called by clicking the button', async () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+    const button = screen.getByText('Load Data');
+    fireEvent.click(button);
+
+         // After clicking the button it should trigger a fetch call
+    expect(fetchMock.calls('http://localhost:4000/api/hello')).toHaveLength(1);
+  });
+  
+  test('button should get hidden after clicking it', async () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+  
+    const button = screen.getByText('Load Data');
+    fireEvent.click(button);
+  
+    // After clicking the button, it should get hidden
+    expect(screen.queryByText('Load Data')).not.toBeInTheDocument();
+  });
+  
+  
 });

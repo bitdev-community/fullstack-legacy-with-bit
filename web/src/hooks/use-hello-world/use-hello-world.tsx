@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useGreetings } from '../../providers/greetings-provider';
 
 interface HelloWorldState {
   data: string | null;
@@ -11,14 +10,14 @@ export const useHelloWorld = (): [HelloWorldState, () => Promise<void>] => {
   const [data, setData] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
-  const { fetchInstance } = useGreetings();
-
+  const host = process.env.REACT_APP_HELLO_API_HOST || 'https://hello.bitexamples.com';
+  
   const fetchHelloWorld = async () => {
     try {
       setLoading(true);
       setError(null);
 
-      const response = await fetchInstance('/api/hello');
+      const response = await fetch(`${host}/api/hello`);
       if (!response.ok) {
         throw new Error('Failed to load hello world');
       }
