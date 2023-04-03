@@ -1,33 +1,33 @@
 import { createContext, ReactNode, useContext } from 'react';
 import Axios, { AxiosInstance } from 'axios';
 
-interface HelloWorldContextValue {
+interface GreetingsContextValue {
   axiosInstance: AxiosInstance;
 }
 
-interface HelloWorldProviderProps {
+interface GreetingsProviderProps {
   baseURL?: string;
   children: ReactNode;
 }
 
-export const HelloWorldContext = createContext<HelloWorldContextValue>({
+export const GreetingsContext = createContext<GreetingsContextValue>({
   axiosInstance: Axios.create(),
 });
 
 export const useGreetings = () => {
-  const greetings = useContext(HelloWorldContext);
+  const greetings = useContext(GreetingsContext);
   if (!greetings) throw new Error('useGreetings must be used within the GreetingsProvider');
   return greetings;
 };
 
-export function HelloWorldProvider({ children, baseURL }: HelloWorldProviderProps) {
+export function HelloWorldProvider({ children, baseURL }: GreetingsProviderProps) {
   const axiosInstance = Axios.create({
     baseURL: baseURL || 'https://hello.bitexamples.com'
   });
 
   return (
-    <HelloWorldContext.Provider value={{ axiosInstance }}>
+    <GreetingsContext.Provider value={{ axiosInstance }}>
       {children}
-    </HelloWorldContext.Provider>
+    </GreetingsContext.Provider>
   );
 }
