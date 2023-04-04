@@ -51,5 +51,4 @@ describe('App component', () => {
     expect(screen.queryByText('Load Data')).not.toBeInTheDocument();
   });
   
-  
 });
