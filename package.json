@@ -1,0 +1,5 @@
+{
+	"dependencies": {
+		"@learnbit/bit-pioneers.routes.goodbye": "^0.0.1"
+	}
+}
