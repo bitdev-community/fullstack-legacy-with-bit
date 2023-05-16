@@ -2,32 +2,32 @@ import cx from 'classnames';
 import { Button } from '../../ui/button';
 import { Heading } from '../../ui/heading';
 import { useHelloWorld } from '../../hooks/use-hello-world';
-import './landing-page.scss'
+import './landing-page.scss';
 import { HTMLAttributes } from 'react';
+import { Loader } from '@learnbit/bit-pioneers.ui.loader';
 
 export type LandingPageProps = {
   className?: string;
-} & HTMLAttributes<HTMLDivElement>
+} & HTMLAttributes<HTMLDivElement>;
 
-export const LandingPage = ({className, ...rest}: LandingPageProps) => {
+export const LandingPage = ({ className, ...rest }: LandingPageProps) => {
   const [helloWorldState, fetchHelloWorld] = useHelloWorld();
 
-
   if (helloWorldState.loading) {
-    return <p {...rest}>Loading...</p>;
+    return <Loader />;
   }
 
   if (helloWorldState.error) {
     return <p {...rest}>Error: {helloWorldState.error.message}</p>;
   }
-  
+
   return (
-    <div className={cx("container", className)} {...rest}>
+    <div className={cx('container', className)} {...rest}>
       {helloWorldState.data ? (
         <Heading>{helloWorldState.data}</Heading>
       ) : (
         <Button onClick={fetchHelloWorld}>Load Data</Button>
       )}
     </div>
-  )
-}
+  );
+};

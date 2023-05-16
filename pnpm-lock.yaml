@@ -2,9 +2,11 @@ lockfileVersion: 5.3
 
 specifiers:
   '@learnbit/bit-pioneers.routes.goodbye': ^0.0.1
+  '@learnbit/bit-pioneers.ui.loader': ^0.0.1
 
 dependencies:
   '@learnbit/bit-pioneers.routes.goodbye': 0.0.1
+  '@learnbit/bit-pioneers.ui.loader': 0.0.1
 
 packages:
 
@@ -12,6 +14,10 @@ packages:
     resolution: {integrity: sha1-/qp6hcQJ/c1XJxjOefoSZX6p184=, tarball: '@learnbit/bit-pioneers.routes.goodbye/-/@learnbit-bit-pioneers.routes.goodbye-0.0.1.tgz'}
     dependencies:
       express: 4.18.2
+    dev: false
+
+  /@learnbit/bit-pioneers.ui.loader/0.0.1:
+    resolution: {integrity: sha1-ktWA0gl6U4Intf2JktPd5rnOwHA=, tarball: '@learnbit/bit-pioneers.ui.loader/-/@learnbit-bit-pioneers.ui.loader-0.0.1.tgz'}
     dev: false
 
   /accepts/1.3.8:
