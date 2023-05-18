@@ -1,6 +1,0 @@
-{
-	"dependencies": {
-		"@learnbit/bit-pioneers.routes.goodbye": "^0.0.1",
-		"@learnbit/bit-pioneers.ui.loader": "^0.0.1"
-	}
-}
