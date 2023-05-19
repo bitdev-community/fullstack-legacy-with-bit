@@ -1,0 +1,16 @@
+/**
+ * @see https://bit.dev/reference/typescript/typescript-config
+ */
+{
+  "extends": "@teambit/react.react-env/config/tsconfig.json",
+  "include": ["**/*", "**/*.json", ".mocharc.js", ".mocharc.js"],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import fetchMock from 'fetch-mock-jest';
 
@@ -20,7 +19,7 @@ describe('App component', () => {
         <App />
       </BrowserRouter>
     );
-     // After viewing the page you should find a Load Data button
+    // After viewing the page you should find a Load Data button
     expect(await screen.findByText('Load Data')).toBeInTheDocument();
   });
 
@@ -33,22 +32,21 @@ describe('App component', () => {
     const button = screen.getByText('Load Data');
     fireEvent.click(button);
 
-         // After clicking the button it should trigger a fetch call
+    // After clicking the button it should trigger a fetch call
     expect(fetchMock.calls('http://localhost:4000/api/hello')).toHaveLength(1);
   });
-  
+
   test('button should get hidden after clicking it', async () => {
     render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     );
-  
+
     const button = screen.getByText('Load Data');
     fireEvent.click(button);
-  
+
     // After clicking the button, it should get hidden
     expect(screen.queryByText('Load Data')).not.toBeInTheDocument();
   });
-  
 });

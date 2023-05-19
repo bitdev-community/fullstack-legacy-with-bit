@@ -1,0 +1,42 @@
+/**
+ * this is the main configuration file of your bit workspace.
+ * for full documentation, please see: https://bit.dev/reference/workspace/workspace-json
+ **/{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  /**
+    * main configuration of the Bit workspace.
+    **/
+  "teambit.workspace/workspace": {
+    "defaultScope": "learnbit.bit-pioneers"
+  },
+  /**
+    * main configuration for component dependency resolution.
+    **/
+  "teambit.dependencies/dependency-resolver": {
+    /**
+      * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
+      */
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@teambit/defender.eslint-linter": "^0.0.10",
+        "@teambit/defender.jest-tester": "^0.0.9",
+        "@teambit/defender.prettier-formatter": "^0.0.6",
+        "@teambit/node.node": "^0.0.32",
+        "@teambit/preview.react-preview": "^0.0.34",
+        "@teambit/react.react-env": "^0.0.63",
+        "@teambit/typescript.typescript-compiler": "^0.0.9",
+        "@types/express": "^4.17.17",
+        "express": "^4.18.2"
+      },
+      "peerDependencies": {}
+    },
+    "linkCoreAspects": true
+  },
+  "teambit.generator/generator": {
+    "envs": [
+      "learnbit.bit-pioneers/envs/node-env",
+      "learnbit.bit-pioneers/envs/react-env"
+    ]
+  }
+}
