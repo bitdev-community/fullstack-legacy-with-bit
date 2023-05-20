@@ -3,3 +3,13 @@ node_modules/
 
 # Ignore DS Store
 .DS_Store
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+
+# Ignore build files
+dist/
+build/
