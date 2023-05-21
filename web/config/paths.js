@@ -8,6 +8,8 @@ const getPublicUrlOrPath = require('react-dev-utils/getPublicUrlOrPath');
 // https://github.com/facebook/create-react-app/issues/637
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+const resolveProject = (relativePath) =>
+  path.resolve(path.dirname(appDirectory), relativePath);
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
 // "public path" at which the app is served.
@@ -53,22 +55,24 @@ const resolveModule = (resolveFn, filePath) => {
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
-  appPath: resolveApp('.'),
+  appPath: resolveApp('web'),
   appBuild: resolveApp(buildPath),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appPublic: resolveApp('web/public'),
+  appHtml: resolveApp('web/public/index.html'),
+  appIndexJs: resolveModule(resolveApp, 'web/src/index'),
   appPackageJson: resolveApp('package.json'),
-  appSrc: resolveApp('src'),
-  appTsConfig: resolveApp('tsconfig.json'),
-  appJsConfig: resolveApp('jsconfig.json'),
-  yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveModule(resolveApp, 'src/setupTests'),
+  appSrc: resolveApp('web/src'),
+  appTsConfig: resolveApp('web/tsconfig.json'),
+  appJsConfig: resolveApp('web/jsconfig.json'),
+  yarnLockFile: resolveProject('yarn.lock'),
+  testsSetup: resolveModule(resolveApp, 'web/src/setupTests'),
   proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
-  appWebpackCache: resolveApp('node_modules/.cache'),
-  appTsBuildInfoFile: resolveApp('node_modules/.cache/tsconfig.tsbuildinfo'),
-  swSrc: resolveModule(resolveApp, 'src/service-worker'),
+  appWebpackCache: resolveProject('node_modules/.cache'),
+  appTsBuildInfoFile: resolveProject(
+    'node_modules/.cache/tsconfig.tsbuildinfo'
+  ),
+  swSrc: resolveModule(resolveApp, 'web/src/service-worker'),
   publicUrlOrPath,
 };
 

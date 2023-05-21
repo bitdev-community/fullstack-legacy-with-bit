@@ -18,15 +18,7 @@
       */
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
-      "dependencies": {
-        "@teambit/defender.eslint-linter": "^0.0.10",
-        "@teambit/defender.jest-tester": "^0.0.9",
-        "@teambit/defender.prettier-formatter": "^0.0.6",
-        "@teambit/node.node": "^0.0.32",
-        "@teambit/preview.react-preview": "^0.0.34",
-        "@teambit/react.react-env": "^0.0.63",
-        "@teambit/typescript.typescript-compiler": "^0.0.9"
-      },
+      "dependencies": {},
       "peerDependencies": {}
     },
     "linkCoreAspects": true
