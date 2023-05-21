@@ -8,7 +8,8 @@
     "build:api": "cd api && tsc",
     "start:web": "node web/scripts/start.js",
     "build:web": "node web/scripts/build.js",
-    "postinstall": "export PATH=$(node link-components.js) compile"
+    "_comment_postinstall": "replace the following with your own bit path. run 'where bit' to get the path",
+    "postinstall": "/Users/eden/bin/bit compile && /Users/eden/bin/bit link"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
