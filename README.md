@@ -19,7 +19,7 @@ You can find the initial application code in [pre-bit](https://github.com/bitdev
       main.yml
 - package.json
 - netlify.toml
-_ redirects
+- _redirects
 ```
 
 ## Running Locally
@@ -64,5 +64,5 @@ You can find the application code with Bit compnents in [post-bit](https://githu
       main.yml
 - package.json
 - netlify.toml
-_ redirects
+- _redirects
 ```
