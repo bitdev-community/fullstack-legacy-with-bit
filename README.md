@@ -5,7 +5,7 @@
 This repository contains a fullstack application that is transformed into Bit components. The application is developed using React for the frontend `(/web)` and Express.js for the API `(/api)`. 
 
 # Fullstack Application
-You can find the initial application code in [pre-bit](https://github.com/bitdev-community/fullstack-legacy-with-bit) branch.
+You can find the initial application code in [pre-bit](https://github.com/bitdev-community/fullstack-legacy-with-bit/tree/pre-bit) branch.
 
 ```
 - web (React)
@@ -43,4 +43,4 @@ npm run start:api
 ```
 
 # Transition into Bit Components
-
+You can find the application code with Bit compnents in [post-bit](https://github.com/bitdev-community/fullstack-legacy-with-bit/tree/post-bit) branch.
