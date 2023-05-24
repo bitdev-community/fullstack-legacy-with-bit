@@ -1,5 +1,5 @@
 [![Bit Org Learnbit](https://img.shields.io/badge/Bit-@learnbit-2C00C3)](https://bit.cloud/learnbit)
-[![Scope Hello World](https://img.shields.io/badge/Scope-Bit--Pioneers_(2)-820596)](bit-pioneers)
+[![Scope Hello World](https://img.shields.io/badge/Scope-Bit--Pioneers_(4)-820596)](bit-pioneers)
     
 # Fullstack Legacy App to Bit
 This repository contains a fullstack application that is transformed into Bit components. The application is developed using React for the frontend `(/web)` and Express.js for the backend API `(/api)`. 
