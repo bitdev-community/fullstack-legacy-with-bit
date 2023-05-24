@@ -44,3 +44,25 @@ npm run start:api
 
 # Transition into Bit Components
 You can find the application code with Bit compnents in [post-bit](https://github.com/bitdev-community/fullstack-legacy-with-bit/tree/post-bit) branch.
+
+```
+- web (React)
+   - .
+   - ..
+- api (Express.js)
+   - .
+   - ..
+   
+- components
+   - envs
+   - routes
+      - goodbye
+   - ui
+      - loader
+- .github
+   - workflows
+      main.yml
+- package.json
+- netlify.toml
+_ redirects
+```
