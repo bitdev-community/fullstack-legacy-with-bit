@@ -25,8 +25,7 @@
   },
   "teambit.generator/generator": {
     "envs": [
-      "learnbit.bit-pioneers/envs/node-env",
-      "learnbit.bit-pioneers/envs/react-env"
+      "teambit.react/react-env"
     ]
   }
 }

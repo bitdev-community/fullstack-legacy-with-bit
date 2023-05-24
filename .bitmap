@@ -9,58 +9,17 @@
  */
 
 {
-    "envs/node-env": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "components/envs/node-env",
-        "config": {
-            "teambit.envs/envs": {
-                "env": "teambit.envs/env"
-            },
-            "teambit.dependencies/dependency-resolver": {
-                "policy": {
-                    "dependencies": {
-                        "@teambit/node.node": "^0.0.13"
-                    }
-                }
-            }
-        }
-    },
-    "envs/react-env": {
-        "scope": "",
-        "version": "",
-        "mainFile": "index.ts",
-        "rootDir": "components/envs/react-env",
-        "config": {
-            "teambit.envs/envs": {
-                "env": "teambit.envs/env"
-            }
-        }
-    },
     "routes/goodbye": {
         "scope": "learnbit.bit-pioneers",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
-        "rootDir": "components/routes/goodbye",
-        "config": {
-            "learnbit.bit-pioneers/envs/node-env": {},
-            "teambit.envs/envs": {
-                "env": "learnbit.bit-pioneers/envs/node-env"
-            }
-        }
+        "rootDir": "components/routes/goodbye"
     },
     "ui/loader": {
         "scope": "learnbit.bit-pioneers",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
-        "rootDir": "components/ui/loader",
-        "config": {
-            "learnbit.bit-pioneers/envs/react-env": {},
-            "teambit.envs/envs": {
-                "env": "learnbit.bit-pioneers/envs/react-env"
-            }
-        }
+        "rootDir": "components/ui/loader"
     },
     "$schema-version": "15.0.0"
 }

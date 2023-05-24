@@ -1,0 +1,26 @@
+---
+description: An Express route handler for the /api/goodbye endpoint
+labels: ['express', 'route', 'node']
+---
+
+# Basic usage
+
+
+Install the component and use it in your Express server:
+
+```ts
+import goodbyeRouter from '@learnbit/bit-pioneers.routes.goodbye';
+
+const app = express();
+app.use('/api', goodbyeRouter);
+
+app.listen(4000, () => {
+  console.log('Server listening on http://localhost:4000');
+});
+```
+
+Run the server and visit http://localhost:4000/api/goodbye to see the response:
+
+```bash
+Goodbye!
+```

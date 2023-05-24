@@ -1,0 +1,17 @@
+---
+description: A spinner component for indicating loading state of a page or a section
+labels: ['loader', 'UI', 'React']
+---
+
+# Basic usage
+
+Install the component and use in your code:
+
+```jsx
+import { Loader } from '@learnbit/bit-pioneers.ui.loader';
+
+<Suspense fallback={<Loader />}>
+    <FetchData url="https://api.example.com/data" />
+</Suspense>
+```
+
