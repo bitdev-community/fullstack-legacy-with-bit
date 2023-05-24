@@ -7,9 +7,7 @@
     "start:api": "nodemon --exec ts-node api/src/index.ts",
     "build:api": "cd api && tsc",
     "start:web": "node web/scripts/start.js",
-    "build:web": "node web/scripts/build.js",
-    "_postinstall_error": "in case of an error, solve by replacing 'bit' with the path to bit, in your machine. run 'where bit' to get the path. for example '/Users/john/bin/bit compile && /Users/john/bin/bit link'",
-    "postinstall": "bit compile && bit link"
+    "build:web": "node web/scripts/build.js"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

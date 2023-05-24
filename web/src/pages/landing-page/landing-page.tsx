@@ -1,10 +1,9 @@
+import type { HTMLAttributes } from 'react';
 import cx from 'classnames';
 import { Button } from '../../ui/button';
 import { Heading } from '../../ui/heading';
 import { useHelloWorld } from '../../hooks/use-hello-world';
 import './landing-page.scss';
-import { HTMLAttributes } from 'react';
-import { Loader } from '@learnbit/bit-pioneers.ui.loader';
 
 export type LandingPageProps = {
   className?: string;
@@ -14,7 +13,7 @@ export const LandingPage = ({ className, ...rest }: LandingPageProps) => {
   const [helloWorldState, fetchHelloWorld] = useHelloWorld();
 
   if (helloWorldState.loading) {
-    return <Loader />;
+    return <p {...rest}>Loading...</p>;
   }
 
   if (helloWorldState.error) {
