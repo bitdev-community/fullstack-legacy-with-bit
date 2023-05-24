@@ -2,7 +2,7 @@
 [![Scope Hello World](https://img.shields.io/badge/Scope-Bit--Pioneers_(2)-820596)](bit-pioneers)
     
 # Fullstack Legacy App to Bit
-This repository contains a fullstack application that is transformed into Bit components. The application is developed using React for the frontend `(/web)` and Express.js for the API `(/api)`. 
+This repository contains a fullstack application that is transformed into Bit components. The application is developed using React for the frontend `(/web)` and Express.js for the backend API `(/api)`. 
 
 # Fullstack Application
 You can find the initial application code in [pre-bit](https://github.com/bitdev-community/fullstack-legacy-with-bit/tree/pre-bit) branch.
@@ -20,24 +20,55 @@ You can find the initial application code in [pre-bit](https://github.com/bitdev
 - _redirects
 ```
 
+# Getting Started
+Let's get started using the application code.
+
+## Cloning the Repository
+
+Clone the repository using the below command.
+
+```
+git clone https://github.com/bitdev-community/fullstack-legacy-with-bit
+```
+
+Then switch to the branch:
+
+```
+git checkout pre-bit
+```
+
 ## Running Locally
 
-Running both Frontend and Backend in Parallel
+Running both Frontend and Backend in Parallel.
 
 ```
 npm run start
 ```
 
-Starting the Frontend Dev Server Only
+Starting the Frontend Dev Server Only.
 
 ```
 npm run start:web
 ```
 
-Starting the Backend Dev Server Only
+Starting the Backend Dev Server Only.
 
 ```
 npm run start:api
+```
+
+## Deploying the Application
+The frontend application is deployed to Netlify and the backend to a virtual machine using ssh. To deploy the application to Netlify, you can configure the build using Netlify UI. You can find the following Netlify configuration files.
+
+```
+_redirects
+netlify.toml
+```
+
+The backend deployment is configured using GitHub actions. You can find the deployment configuration in:
+
+```
+.github/workflows/main.yml
 ```
 
 # Transition into Bit Components
