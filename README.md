@@ -9,10 +9,8 @@ You can find the initial application code in [pre-bit](https://github.com/bitdev
 
 ```
 - web (React)
-   - .
    - ..
 - api (Express.js)
-   - .
    - ..
 - .github
    - workflows
