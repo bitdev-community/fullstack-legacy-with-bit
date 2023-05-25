@@ -1,6 +1,6 @@
 [build]
   # Install dependencies and build the app
-  command = "cd web && npm install && npm run build"
+  command = "npm install && npm run web:build"
   publish = "web/build"
 
 [build.environment]
