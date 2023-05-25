@@ -1,5 +1,6 @@
 [build]
   # Install dependencies and build the app
+  base = "web"
   command = "npm install && npm run build:web"
   publish = "build"
 
