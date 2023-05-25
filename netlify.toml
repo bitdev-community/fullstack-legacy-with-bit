@@ -1,6 +1,6 @@
 [build]
   # Install dependencies and build the app
-  command = "npm install && npm run build:web"
+  command = "npm install && npm install dotenv-expand && npm run build:web"
   publish = "build"
 
 [build.environment]
