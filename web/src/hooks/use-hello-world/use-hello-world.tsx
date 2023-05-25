@@ -11,7 +11,7 @@ export const useHelloWorld = (): [HelloWorldState, () => Promise<void>] => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
   const host =
-    process.env.REACT_APP_HELLO_API_HOST || 'https://hello.bitexamples.com';
+    process.env.REACT_APP_HELLO_API_HOST ?? '';
 
   const fetchHelloWorld = async () => {
     try {
