@@ -95,3 +95,21 @@ You can find the application code with Bit compnents in [post-bit](https://githu
 - netlify.toml
 - _redirects
 ```
+
+## Running Locally
+
+Running the Bit Development Server
+
+```
+bit start
+```
+
+## Deploying the App Components
+
+Build and Tag the React App Component to Deploy it to Netlify, and Express App Component to a Virtual Machine
+**Prerequisite:** Update the Netlify Credentials in React App Component and SSH Confiugration in the Express App Component
+
+```
+bit tag -m "tagging components"
+```
+
